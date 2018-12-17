@@ -96,6 +96,8 @@ func (c *Config) parseCLI(p *flaggy.Parser) error {
 	}
 
 	c.bin = binary
+	c.args = args
+
 	if len(specFiles) > 0 {
 		// NOTE: this overwrites ENVEXEC_SPEC_FILES env var.
 		c.specs = specFiles
