@@ -86,22 +86,26 @@ envexec --spec-file vaultsecrets.yaml -- /usr/bin/env
 
 ##### Token
 
+See: https://www.vaultproject.io/docs/auth/token.html
+
 ```bash
 export VAULT_ADDR="https://vault.company.tld"
 export VAULT_METHOD="token"
 export VAULT_TOKEN="put-vault-token-here"
 
-envault --spec-file vaultsecrets.yaml -- /usr/bin/env
+envexec --spec-file vaultsecrets.yaml -- /usr/bin/env
 ```
 
 ##### Kubernetes
+
+See: https://www.vaultproject.io/docs/auth/kubernetes.html
 
 ```bash
 export VAULT_ADDR="https://vault.company.tld"
 export VAULT_AUTH_METHOD="kubernetes"
 export VAULT_AUTH_KUBERNETES_ROLE="foo-app"
 
-envault --spec-file vaultsecrets.yaml /usr/bin/env
+envexec --spec-file vaultsecrets.yaml /usr/bin/env
 ```
 
 ## Acknowledgements
