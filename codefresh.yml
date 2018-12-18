@@ -1,0 +1,21 @@
+# See: https://codefresh.io/docs/docs/codefresh-yaml/what-is-the-codefresh-yaml/
+
+version: '1.0'
+steps:
+  install_modules:
+    title: Install modules
+    image: golang:1.11.4-alpine
+    commands:
+      - apk add --no-cache git
+      - echo "--> Download modules ..."
+      - go mod download
+      - echo "--> Put modules to vendor ..."
+      - go mod vendor
+
+  run_tests:
+    title: Run tests
+    image: golang:1.11.4-alpine
+    commands:
+      - echo "--> Run tests ..."
+      - GOFLAGS=-mod=vendor CGO_ENABLED=0 go test -v ./...
+
