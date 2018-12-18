@@ -11,13 +11,13 @@ require (
 	github.com/NYTimes/gziphandler v1.0.1 // indirect
 	github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 // indirect
 	github.com/SAP/go-hdb v0.13.1 // indirect
-	github.com/SermoDigital/jose v0.0.0-20161205224733-f6df55f235c2 // indirect
+	github.com/SermoDigital/jose v0.9.2-0.20161205224733-f6df55f235c2 // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v0.0.0-20181217080118-5530379788a0 // indirect
 	github.com/araddon/gou v0.0.0-20180803232539-d7d8174cb8b3 // indirect
 	github.com/armon/go-metrics v0.0.0-20180917152333-f0300d1749da // indirect
 	github.com/armon/go-radix v1.0.0 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf // indirect
-	github.com/aws/aws-sdk-go v1.16.6 // indirect
+	github.com/aws/aws-sdk-go v1.16.7 // indirect
 	github.com/bitly/go-hostpool v0.0.0-20171023180738-a3a6125de932 // indirect
 	github.com/bmizerany/assert v0.0.0-20160611221934-b7ed37b82869 // indirect
 	github.com/boltdb/bolt v1.3.1 // indirect
@@ -71,24 +71,23 @@ require (
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway v1.6.2 // indirect
 	github.com/hashicorp/consul v1.4.0 // indirect
-	github.com/hashicorp/go-cleanhttp v0.5.0 // indirect
 	github.com/hashicorp/go-gcp-common v0.0.0-20180425173946-763e39302965 // indirect
 	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f
 	github.com/hashicorp/go-immutable-radix v1.0.0 // indirect
 	github.com/hashicorp/go-memdb v0.0.0-20181108192425-032f93b25bec // indirect
 	github.com/hashicorp/go-msgpack v0.0.0-20150518234257-fa3f63826f7c // indirect
 	github.com/hashicorp/go-multierror v1.0.0 // indirect
-	github.com/hashicorp/go-plugin v0.0.0-20181030172320-54b6ff97d818 // indirect
-	github.com/hashicorp/go-retryablehttp v0.0.0-20180718195005-e651d75abec6 // indirect
+	github.com/hashicorp/go-plugin v0.0.0-20181212150838-f444068e8f5a // indirect
+	github.com/hashicorp/go-retryablehttp v0.5.0 // indirect
 	github.com/hashicorp/go-rootcerts v0.0.0-20160503143440-6bb64b370b90 // indirect
 	github.com/hashicorp/go-sockaddr v0.0.0-20180320115054-6d291a969b86 // indirect
 	github.com/hashicorp/go-version v1.0.0 // indirect
-	github.com/hashicorp/hcl v0.0.0-20180906183839-65a6292f0157 // indirect
+	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/hashicorp/memberlist v0.1.0 // indirect
 	github.com/hashicorp/nomad v0.8.6 // indirect
 	github.com/hashicorp/raft v1.0.0 // indirect
 	github.com/hashicorp/serf v0.8.1 // indirect
-	github.com/hashicorp/vault v1.0.0
+	github.com/hashicorp/vault v1.0.1
 	github.com/hashicorp/vault-plugin-auth-alicloud v0.0.0-20181109180636-f278a59ca3e8 // indirect
 	github.com/hashicorp/vault-plugin-auth-azure v0.0.0-20181207232528-4c0b46069a22 // indirect
 	github.com/hashicorp/vault-plugin-auth-centrify v0.0.0-20180816201131-66b0a34a58bf // indirect
@@ -101,7 +100,6 @@ require (
 	github.com/hashicorp/vault-plugin-secrets-gcp v0.0.0-20180921173200-d6445459e80c // indirect
 	github.com/hashicorp/vault-plugin-secrets-gcpkms v0.0.0-20181212182553-6cd991800a6d // indirect
 	github.com/hashicorp/vault-plugin-secrets-kv v0.0.0-20181106190520-2236f141171e // indirect
-	github.com/hashicorp/yamux v0.0.0-20181012175058-2f1d1f20f75d // indirect
 	github.com/integrii/flaggy v0.0.0-20181007032133-1056ce330646
 	github.com/jeffchao/backoff v0.0.0-20140404060208-9d7fd7aa17f2 // indirect
 	github.com/jefferai/jsonx v0.0.0-20160721235117-9cc31c3135ee // indirect
@@ -130,7 +128,7 @@ require (
 	github.com/pascaldekloe/goe v0.0.0-20180627143212-57f6aae5913c // indirect
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/pborman/uuid v1.2.0 // indirect
-	github.com/pierrec/lz4 v0.0.0-20181005164709-635575b42742 // indirect
+	github.com/pierrec/lz4 v2.0.5+incompatible // indirect
 	github.com/pkg/errors v0.8.0 // indirect
 	github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35 // indirect
 	github.com/pquerna/otp v1.0.0 // indirect
@@ -154,11 +152,11 @@ require (
 	go.uber.org/multierr v1.1.0 // indirect
 	go.uber.org/zap v1.9.1 // indirect
 	golang.org/x/crypto v0.0.0-20181203042331-505ab145d0a9 // indirect
-	golang.org/x/sys v0.0.0-20181208175041-ad97f365e150 // indirect
-	golang.org/x/time v0.0.0-20180412165947-fbb02b2291d2 // indirect
+	golang.org/x/net v0.0.0-20181217023233-e147a9138326 // indirect
+	golang.org/x/oauth2 v0.0.0-20181203162652-d668ce993890 // indirect
+	golang.org/x/sys v0.0.0-20181217223516-dcdaa6325bcb // indirect
+	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c // indirect
 	google.golang.org/api v0.0.0-20181217000635-41dc4b66e69d // indirect
-	google.golang.org/appengine v1.3.0 // indirect
-	google.golang.org/genproto v0.0.0-20181202183823-bd91e49a0898 // indirect
 	google.golang.org/grpc v1.17.0 // indirect
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
 	gopkg.in/gorethink/gorethink.v4 v4.1.0 // indirect
