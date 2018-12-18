@@ -1,7 +1,7 @@
 # envexec
 
 [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/hypnoglow/hypnoglow%2Fenvexec%2Fenvexec?type=cf-1)]( https://g.codefresh.io/public/accounts/hypnoglow/pipelines/hypnoglow/envexec/envexec)
-[![GolangCI](https://golangci.com/badges/github.com/hypnoglow/envexec.svg)
+[![GolangCI](https://golangci.com/badges/github.com/hypnoglow/envexec.svg)](https://golangci.com/r/github.com/hypnoglow/envexec)
 
 envexec helps to provision an application by taking values from
 sources like Vault and bringing them as environment variables.
