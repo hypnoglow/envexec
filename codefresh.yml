@@ -1,8 +1,16 @@
 # See: https://codefresh.io/docs/docs/codefresh-yaml/what-is-the-codefresh-yaml/
 
 version: '1.0'
+
+stages:
+  - deps
+  - test
+  - build
+  - push
+
 steps:
   install_modules:
+    stage: deps
     title: Install modules
     image: golang:1.11.4-alpine
     commands:
@@ -13,9 +21,51 @@ steps:
       - go mod vendor
 
   run_tests:
+    stage: test
     title: Run tests
     image: golang:1.11.4-alpine
     commands:
       - echo "--> Run tests ..."
       - GOFLAGS=-mod=vendor CGO_ENABLED=0 go test -v ./...
 
+  build_images:
+    stage: build
+    type: parallel
+    steps:
+      build_image_scratch:
+        title: Build image (scratch)
+        type: build
+        dockerfile: docker/scratch/Dockerfile
+        image-name: hypnoglow/envexec
+        tag: commit-${{CF_SHORT_REVISION}}-scratch
+      build_image_alpine:
+        title: Build image (alpine)
+        type: build
+        dockerfile: docker/alpine/Dockerfile
+        image-name: hypnoglow/envexec
+        tag: commit-${{CF_SHORT_REVISION}}-alpine
+
+  push_images_on_master:
+    stage: push
+    type: parallel
+    steps:
+      push_image_scratch_on_master:
+        title: Push image (scratch)
+        type: push
+        candidate: ${{build_image_scratch}}
+        tags:
+          - commit-${{CF_SHORT_REVISION}}-scratch
+          - latest-scratch
+        registry: dockerhub
+      push_image_alpine_on_master:
+        title: Push image (alpine)
+        type: push
+        candidate: ${{build_image_alpine}}
+        tags:
+          - commit-${{CF_SHORT_REVISION}}-alpine
+          - latest-alpine
+        registry: dockerhub
+    when:
+      branch:
+        only:
+          - master
