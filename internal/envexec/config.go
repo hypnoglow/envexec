@@ -67,7 +67,10 @@ https://github.com/hypnoglow/envexec`
 }
 
 func (c *Config) parseEnvironment() error {
-	c.specs = strings.Split(os.Getenv("ENVEXEC_SPEC_FILES"), ",")
+	specs := strings.TrimSpace(os.Getenv("ENVEXEC_SPEC_FILES"))
+	if specs != "" {
+		c.specs = strings.Split(specs, ",")
+	}
 	return nil
 }
 
