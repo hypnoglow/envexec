@@ -3,7 +3,7 @@
 [![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/hypnoglow/hypnoglow%2Fenvexec%2Fenvexec?type=cf-1)]( https://g.codefresh.io/public/accounts/hypnoglow/pipelines/hypnoglow/envexec/envexec)
 [![GolangCI](https://golangci.com/badges/github.com/hypnoglow/envexec.svg)](https://golangci.com/r/github.com/hypnoglow/envexec)
 
-envexec helps to provision an application by taking values from
+**envexec** helps to provision an application by taking values from
 sources like Vault and bringing them as environment variables.
 
 ## Features
@@ -13,6 +13,37 @@ sources like Vault and bringing them as environment variables.
 - One small static binary (💙 Golang)
 - Familiar configuration format, with versions
 - No supervising, just replaces the process with `exec`
+- Simple Docker integration
+
+## Usage
+
+### Docker
+
+The easiest way to embed **envexec** into your Docker image is to just
+copy the binary from the prebuilt image:
+
+```docker
+FROM alpine:3.8
+
+COPY --from=hypnoglow/envexec:latest-scratch /envexec /usr/local/bin/envexec
+
+ENTRYPOINT ["envexec", "--"]
+CMD ["echo", "Hello from evnexec!"]
+```
+
+An alternative approach is to build your image with **envexec** image
+as a base:
+
+```
+FROM hypnoglow/envexec:latest-alpine
+
+ENTRYPOINT ["envexec", "--"]
+CMD ["echo", "Hello from evnexec!"]
+```
+
+*NOTE: Using "latest" tags is not recommended. Prefer tagged versions.*
+
+See [examples](_examples/docker/) for more info.
 
 ## Providers
 
@@ -45,7 +76,7 @@ export VAULT_METHOD="token"
 export VAULT_TOKEN="put-vault-token-here"
 ```
 
-Now you just run your app through envexec:
+Now you just run your app through **envexec**:
 
 ```bash
 envexec --spec-file vaultsecrets.yaml -- /usr/bin/env
