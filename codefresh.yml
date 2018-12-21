@@ -92,6 +92,7 @@ steps:
         candidate: ${{build_image_scratch}}
         tags:
           - ${{ENVEXEC_TAG}}-scratch
+        registry: dockerhub
       push_image_alpine_on_tag:
         title: Push tag (alpine)
         type: push
