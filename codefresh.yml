@@ -113,8 +113,9 @@ steps:
   release_on_github:
     stage: release
     title: Create GitHub release
-    image: alpine:3.8
+    image: golang:1.11.4-alpine
     commands:
+      - apk add --no-cache curl bash git
       - curl -sL https://git.io/goreleaser | bash
     when:
       condition:
