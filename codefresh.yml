@@ -7,6 +7,7 @@ stages:
   - test
   - build
   - push
+  - release
 
 steps:
   install_modules:
@@ -21,9 +22,10 @@ steps:
       - go mod vendor
       # Hack: prepare variable for tag.
       - cf_export ENVEXEC_TAG="${CF_BRANCH_TAG_NORMALIZED#v*}"
-    condition:
-      all:
-        noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
 
   run_tests:
     stage: test
@@ -32,9 +34,10 @@ steps:
     commands:
       - echo "--> Run tests ..."
       - GOFLAGS=-mod=vendor CGO_ENABLED=0 go test -v ./...
-    condition:
-      all:
-        noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
 
   build_images:
     stage: build
@@ -52,9 +55,10 @@ steps:
         dockerfile: docker/alpine/Dockerfile
         image-name: hypnoglow/envexec
         tag: commit-${{CF_SHORT_REVISION}}-alpine
-    condition:
-      all:
-        noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
 
   push_images_on_master:
     stage: push
@@ -100,6 +104,18 @@ steps:
         tags:
           - ${{ENVEXEC_TAG}}-alpine
         registry: dockerhub
+    when:
+      condition:
+        all:
+          noSkipCiInCommitMessage: 'includes(lower("${{CF_COMMIT_MESSAGE}}"), "[skip ci]") == false'
+          isTag: 'match("${{ENVEXEC_TAG}}", "^[0-9]+\.[0-9]+\.[0-9]+", false) == true'
+
+  release_on_github:
+    stage: release
+    title: Create GitHub release
+    image: alpine:3.8
+    commands:
+      - curl -sL https://git.io/goreleaser | bash
     when:
       condition:
         all:
