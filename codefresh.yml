@@ -13,7 +13,7 @@ steps:
   install_modules:
     stage: deps
     title: Install modules
-    image: golang:1.11.4-alpine
+    image: golang:1.20-alpine
     commands:
       - apk add --no-cache git
       - echo "--> Download modules ..."
@@ -30,7 +30,7 @@ steps:
   run_tests:
     stage: test
     title: Run tests
-    image: golang:1.11.4-alpine
+    image: golang:1.20-alpine
     commands:
       - echo "--> Run tests ..."
       - GOFLAGS=-mod=vendor CGO_ENABLED=0 go test -v ./...
@@ -113,7 +113,7 @@ steps:
   release_on_github:
     stage: release
     title: Create GitHub release
-    image: golang:1.11.4-alpine
+    image: golang:1.20-alpine
     commands:
       - apk add --no-cache curl bash git
       - curl -sL https://git.io/goreleaser | bash
