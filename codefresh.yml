@@ -47,12 +47,14 @@ steps:
         title: Build image (scratch)
         type: build
         dockerfile: docker/scratch/Dockerfile
+        registry: dockerhub
         image-name: hypnoglow/envexec
         tag: commit-${{CF_SHORT_REVISION}}-scratch
       build_image_alpine:
         title: Build image (alpine)
         type: build
         dockerfile: docker/alpine/Dockerfile
+        registry: dockerhub
         image-name: hypnoglow/envexec
         tag: commit-${{CF_SHORT_REVISION}}-alpine
     when:
