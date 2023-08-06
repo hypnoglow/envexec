@@ -28,7 +28,7 @@ FROM alpine:3.8
 COPY --from=hypnoglow/envexec:latest-scratch /envexec /usr/local/bin/envexec
 
 ENTRYPOINT ["envexec", "--"]
-CMD ["echo", "Hello from evnexec!"]
+CMD ["echo", "Hello from envexec!"]
 ```
 
 An alternative approach is to build your image with **envexec** image
@@ -38,7 +38,7 @@ as a base:
 FROM hypnoglow/envexec:latest-alpine
 
 ENTRYPOINT ["envexec", "--"]
-CMD ["echo", "Hello from evnexec!"]
+CMD ["echo", "Hello from envexec!"]
 ```
 
 *NOTE: Using "latest" tags is not recommended. Prefer tagged versions.*

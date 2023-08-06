@@ -4,4 +4,4 @@ FROM alpine:3.8
 COPY --from=hypnoglow/envexec:latest-scratch /envexec /usr/local/bin/envexec
 
 ENTRYPOINT ["envexec", "--"]
-CMD ["echo", "Hello from evnexec!"]
+CMD ["echo", "Hello from envexec!"]
