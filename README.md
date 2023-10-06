@@ -23,12 +23,12 @@ The easiest way to embed **envexec** into your Docker image is to just
 copy the binary from the prebuilt image:
 
 ```docker
-FROM alpine:3.8
+FROM alpine:3.18
 
 COPY --from=hypnoglow/envexec:latest-scratch /envexec /usr/local/bin/envexec
 
 ENTRYPOINT ["envexec", "--"]
-CMD ["echo", "Hello from evnexec!"]
+CMD ["echo", "Hello from envexec!"]
 ```
 
 An alternative approach is to build your image with **envexec** image
@@ -38,7 +38,7 @@ as a base:
 FROM hypnoglow/envexec:latest-alpine
 
 ENTRYPOINT ["envexec", "--"]
-CMD ["echo", "Hello from evnexec!"]
+CMD ["echo", "Hello from envexec!"]
 ```
 
 *NOTE: Using "latest" tags is not recommended. Prefer tagged versions.*

@@ -13,6 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+.PHONY: all
+all: deps test
+
+.PHONY: deps
+deps:
+	go mod tidy
+
+.PHONY: test
+test:
+	go test -v ./...
+
 .PHONY: images
 images:
 	docker build -f docker/scratch/Dockerfile -t hypnoglow/envexec:latest-scratch .
