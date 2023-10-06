@@ -10,6 +10,12 @@ stages:
   - release
 
 steps:
+  clone:
+    title: Cloning repository...
+    type: git-clone
+    repo: '${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}'
+    revision: '${{CF_REVISION}}'
+
   install_modules:
     stage: deps
     title: Install modules
