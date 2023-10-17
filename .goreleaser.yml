@@ -1,14 +1,17 @@
 builds:
-- env:
-  - CGO_ENABLED=0
-  - GOFLAGS=-mod=vendor
+  - flags:
+      - -trimpath
+    env:
+      - CGO_ENABLED=0
 
-archive:
-  format: tar.gz
-  replacements:
-    darwin: Darwin
-    linux: Linux
-    windows: Windows
-    386: i386
-    amd64: x86_64
-  wrap_in_directory: true
+archives:
+  - id: tar
+    format: tar.gz
+
+release:
+  draft: true
+
+# The lines beneath this are called `modelines`. See `:help modeline`
+# Feel free to remove those if you don't want/use them.
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+# vim: set ts=2 sw=2 tw=0 fo=cnqoj

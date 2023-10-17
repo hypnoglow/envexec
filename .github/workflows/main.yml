@@ -1,0 +1,167 @@
+name: main
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+
+      - name: Setup Go
+        uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
+        with:
+          go-version-file: 'go.mod'
+
+      - name: Download dependencies
+        run: |
+          go mod download
+
+      - name: Run unit tests
+        run: |
+          go test -v -race -coverprofile=coverage.txt -covermode=atomic $(go list ./...)
+
+# TODO: enable after fixing linter issues
+#      - name: Run linter
+#        uses: golangci/golangci-lint-action@3a919529898de77ec3da873e3063ca4b10e7f5cc # v3.7.0
+#        with:
+#          version: v1.52.2
+#          args: --verbose
+#          # See: https://github.com/golangci/golangci-lint-action/issues/244
+#          skip-pkg-cache: true
+#          skip-build-cache: true
+
+      - name: Build
+        run: |
+          go build -v -o ./bin/envexec .
+
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    env:
+      IMAGE_NAME: hypnoglow/envexec
+      # For PR, we only build for AMD64, just to be sure that Docker build works.
+      # For main branch and tags we also build for ARM64.
+      # Note that building for ARM64 is very slow.
+      IMAGE_PLATFORMS: |
+        linux/amd64
+        ${{ github.event_name != 'pull_request' && 'linux/arm64' || '' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+
+      - name: Setup Go
+        uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
+        with:
+          go-version-file: 'go.mod'
+
+      - name: Download dependencies
+        run: |
+          go mod download
+          go mod vendor
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@465a07811f14bebb1938fbed4728c6a1ff8901fc # v2.2.0
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+        if: github.event_name != 'pull_request'
+
+      # Used for arm images.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2.2.0
+        with:
+          platforms: ${{ env.IMAGE_PLATFORMS }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@885d1462b80bc1c1c7f0b00334ad271f09369c55 # v2.10.0
+
+      - name: Extract Docker image metadata (alpine)
+        id: docker_meta_alpine
+        uses: docker/metadata-action@818d4b7b91585d195f67373fd9cb0332e31a7175 # v4.6.0
+        with:
+          images: |
+            ${{ env.IMAGE_NAME }}
+          flavor: |
+            suffix=-alpine
+          tags: |
+            type=ref,event=pr
+            type=ref,event=branch,enable={{ is_default_branch }}
+            type=semver,pattern={{ version }}
+
+      - name: Extract Docker image metadata (scratch)
+        id: docker_meta_scratch
+        uses: docker/metadata-action@818d4b7b91585d195f67373fd9cb0332e31a7175 # v4.6.0
+        with:
+          images: |
+            ${{ env.IMAGE_NAME }}
+          flavor: |
+            suffix=-scratch
+          tags: |
+            type=ref,event=pr
+            type=ref,event=branch,enable={{ is_default_branch }}
+            type=semver,pattern={{ version }}
+
+      - name: Build and push Docker image (alpine)
+        uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825 # v4.1.1
+        with:
+          file: docker/alpine/Dockerfile
+          context: .
+          platforms: ${{ env.IMAGE_PLATFORMS }}
+          tags: ${{ steps.docker_meta_alpine.outputs.tags }}
+          labels: ${{ steps.docker_meta_alpine.outputs.labels }}
+          push: ${{ github.event_name != 'pull_request' }}
+
+      - name: Build and push Docker image (scratch)
+        uses: docker/build-push-action@2eb1c1961a95fc15694676618e422e8ba1d63825 # v4.1.1
+        with:
+          file: docker/scratch/Dockerfile
+          context: .
+          platforms: ${{ env.IMAGE_PLATFORMS }}
+          tags: ${{ steps.docker_meta_scratch.outputs.tags }}
+          labels: ${{ steps.docker_meta_scratch.outputs.labels }}
+          push: ${{ github.event_name != 'pull_request' }}
+
+  goreleaser:
+    name: GoReleaser
+    runs-on: ubuntu-latest
+    needs:
+      - build
+    permissions:
+      contents: write
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        with:
+          fetch-depth: 0
+
+      - name: Setup Go
+        uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
+        with:
+          go-version-file: 'go.mod'
+
+      - name: Download dependencies
+        run: |
+          go mod download
+
+      - name: Run GoReleaser
+        uses: goreleaser/goreleaser-action@3fa32b8bb5620a2c1afe798654bbad59f9da4906 # v4.4.0
+        with:
+          version: latest
+          args: release --clean
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GORELEASER_PREVIOUS_TAG: ""
