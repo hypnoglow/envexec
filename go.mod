@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/ghodss/yaml v1.0.0
-	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f
+	github.com/hashicorp/go-hclog v1.5.0
 	github.com/hashicorp/vault v1.0.1
 	github.com/integrii/flaggy v0.0.0-20181007032133-1056ce330646
 	github.com/stretchr/testify v1.8.4
@@ -44,6 +44,7 @@ require (
 	github.com/docker/go-units v0.3.3 // indirect
 	github.com/duosecurity/duo_api_golang v0.0.0-20181210160733-61e0defebf22 // indirect
 	github.com/elazarl/go-bindata-assetfs v1.0.0 // indirect
+	github.com/fatih/color v1.13.0 // indirect
 	github.com/fatih/structs v1.1.0 // indirect
 	github.com/fullsailor/pkcs7 v0.0.0-20180613152042-8306686428a5 // indirect
 	github.com/gammazero/deque v0.0.0-20180920172122-f6adf94963e4 // indirect
@@ -100,6 +101,8 @@ require (
 	github.com/keybase/go-crypto v0.0.0-20181127160227-255a5089e85a // indirect
 	github.com/kr/pretty v0.1.0 // indirect
 	github.com/lib/pq v1.0.0 // indirect
+	github.com/mattn/go-colorable v0.1.12 // indirect
+	github.com/mattn/go-isatty v0.0.14 // indirect
 	github.com/michaelklishin/rabbit-hole v1.4.0 // indirect
 	github.com/miekg/dns v1.1.1 // indirect
 	github.com/mitchellh/copystructure v1.0.0 // indirect
@@ -134,7 +137,7 @@ require (
 	golang.org/x/net v0.0.0-20181217023233-e147a9138326 // indirect
 	golang.org/x/oauth2 v0.0.0-20181203162652-d668ce993890 // indirect
 	golang.org/x/sync v0.0.0-20181108010431-42b317875d0f // indirect
-	golang.org/x/sys v0.0.0-20181217223516-dcdaa6325bcb // indirect
+	golang.org/x/sys v0.0.0-20220503163025-988cb79eb6c6 // indirect
 	golang.org/x/text v0.3.0 // indirect
 	golang.org/x/time v0.0.0-20181108054448-85acf8d2951c // indirect
 	google.golang.org/api v0.0.0-20181217000635-41dc4b66e69d // indirect
