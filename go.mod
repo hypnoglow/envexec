@@ -6,7 +6,7 @@ require (
 	github.com/ghodss/yaml v1.0.0
 	github.com/hashicorp/go-hclog v1.5.0
 	github.com/hashicorp/vault v1.0.1
-	github.com/integrii/flaggy v0.0.0-20181007032133-1056ce330646
+	github.com/integrii/flaggy v1.5.2
 	github.com/stretchr/testify v1.8.4
 )
 
