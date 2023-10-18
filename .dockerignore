@@ -1,0 +1,8 @@
+*
+!/docker/
+!/internal/
+!/vendor/
+!/.dockerignore
+!/go.mod
+!/go.sum
+!/main.go
