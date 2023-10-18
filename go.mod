@@ -7,7 +7,7 @@ require (
 	github.com/hashicorp/go-hclog v0.0.0-20181001195459-61d530d6c27f
 	github.com/hashicorp/vault v1.0.1
 	github.com/integrii/flaggy v0.0.0-20181007032133-1056ce330646
-	github.com/stretchr/testify v1.2.2
+	github.com/stretchr/testify v1.8.4
 )
 
 require (
@@ -146,6 +146,7 @@ require (
 	gopkg.in/mgo.v2 v2.0.0-20180705113604-9856a29383ce // indirect
 	gopkg.in/square/go-jose.v2 v2.2.1 // indirect
 	gopkg.in/yaml.v2 v2.2.2 // indirect
+	gopkg.in/yaml.v3 v3.0.1 // indirect
 	k8s.io/api v0.0.0-20181130031204-d04500c8c3dd // indirect
 	k8s.io/apimachinery v0.0.0-20181215012845-4d029f033399 // indirect
 	k8s.io/klog v0.1.0 // indirect
