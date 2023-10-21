@@ -1,7 +1,13 @@
 # envexec
 
-[![Codefresh build status]( https://g.codefresh.io/api/badges/pipeline/hypnoglow/hypnoglow%2Fenvexec%2Fenvexec?type=cf-1)]( https://g.codefresh.io/public/accounts/hypnoglow/pipelines/hypnoglow/envexec/envexec)
-[![GolangCI](https://golangci.com/badges/github.com/hypnoglow/envexec.svg)](https://golangci.com/r/github.com/hypnoglow/envexec)
+<p align="left">
+  <a href="https://github.com/hypnoglow/envexec/actions/workflows/main.yml" target="_blank">
+    <img src="https://github.com/hypnoglow/envexec/actions/workflows/main.yml/badge.svg?branch=main&event=push" alt="main">
+  </a>
+  <a href="https://github.com/hypnoglow/envexec/blob/main/LICENSE" target="_blank">
+    <img src="https://img.shields.io/github/license/hypnoglow/envexec.svg" alt="GitHub license">
+  </a>
+</p>
 
 **envexec** helps to provision an application by taking values from
 sources like Vault and bringing them as environment variables.
