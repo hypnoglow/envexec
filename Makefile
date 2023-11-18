@@ -19,6 +19,7 @@ all: deps test
 .PHONY: deps
 deps:
 	go mod tidy
+	go mod vendor
 
 .PHONY: test
 test:
