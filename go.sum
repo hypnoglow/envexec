@@ -139,8 +139,6 @@ github.com/Masterminds/sprig/v3 v3.2.3/go.mod h1:rXcFaZ2zZbLRJv/xSysmlgIM1u11eBa
 github.com/Microsoft/go-winio v0.6.1 h1:9/kr64B9VUZrLm5YYwbGtUJnMgqWVOdUAXu6Migciow=
 github.com/Microsoft/go-winio v0.6.1/go.mod h1:LRdKpFKfdobln8UmuiYcKPot9D2v6svN5+sAH+4kjUM=
 github.com/NYTimes/gziphandler v0.0.0-20170623195520-56545f4a5d46/go.mod h1:3wb06e3pkSAbeQ52E9H9iFoQsEEwGN64994WTCIhntQ=
-github.com/NYTimes/gziphandler v1.1.1 h1:ZUDjpQae29j0ryrS0u/B8HZfJBtBQHjqw2rQ2cqUQ3I=
-github.com/NYTimes/gziphandler v1.1.1/go.mod h1:n/CVRwUEOgIxrgPvAQhUUr9oeUtvrhMomdKFjzJNB0c=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5 h1:TngWCqHvy9oXAN6lEVMRuU21PR1EtLVZJmdB18Gu3Rw=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5/go.mod h1:lmUJ/7eu/Q8D7ML55dXQrVaamCz2vxCfdQBasLZfHKk=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
@@ -318,8 +316,8 @@ github.com/docker/cli v20.10.20+incompatible h1:lWQbHSHUFs7KraSN2jOJK7zbMS2jNCHI
 github.com/docker/cli v20.10.20+incompatible/go.mod h1:JLrzqnKDaYBop7H2jaqPtU4hHvMKP+vjCwu2uszcLI8=
 github.com/docker/distribution v2.8.2+incompatible h1:T3de5rq0dB1j30rp0sA2rER+m322EBzniBPB6ZIzuh8=
 github.com/docker/distribution v2.8.2+incompatible/go.mod h1:J2gT2udsDAN96Uj4KfcMRqY0/ypR+oyYUYmja8H+y+w=
-github.com/docker/docker v24.0.5+incompatible h1:WmgcE4fxyI6EEXxBRxsHnZXrO1pQ3smi0k/jho4HLeY=
-github.com/docker/docker v24.0.5+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
+github.com/docker/docker v24.0.7+incompatible h1:Wo6l37AuwP3JaMnZa226lzVXGA3F9Ig1seQen0cKYlM=
+github.com/docker/docker v24.0.7+incompatible/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/docker/go-connections v0.4.0 h1:El9xVISelRB7BuFusrZozjnkIM5YnzCViNKohAFqRJQ=
 github.com/docker/go-connections v0.4.0/go.mod h1:Gbd7IOopHjR8Iph03tsViu4nIes5XhDvyHbTtUxmeec=
 github.com/docker/go-units v0.3.3/go.mod h1:fgPhTUdO+D/Jk86RDLlptpiXQzgHJF7gydDDbaIK4Dk=
@@ -830,8 +828,8 @@ github.com/hashicorp/raft-snapshot v1.0.4 h1:EuDuayAJPdiDmVk1ygTDnG2zDzrs0/6/yBu
 github.com/hashicorp/raft-snapshot v1.0.4/go.mod h1:5sL9eUn72lH5DzsFIJ9jaysITbHksSSszImWSOTC8Ic=
 github.com/hashicorp/serf v0.10.1 h1:Z1H2J60yRKvfDYAOZLd2MU0ND4AH/WDz7xYHDWQsIPY=
 github.com/hashicorp/serf v0.10.1/go.mod h1:yL2t6BqATOLGc5HF7qbFkTfXoPIY0WZdWHfEvMqbG+4=
-github.com/hashicorp/vault v1.15.1 h1:s1HhlcbC5j3uGvhUKS8n1F3VlVmn6N+uuqDsF/VLtbk=
-github.com/hashicorp/vault v1.15.1/go.mod h1:D7oes94j5z5uRbYxesebRSWssIB2pCzxoEGRmnzkU3c=
+github.com/hashicorp/vault v1.15.2 h1:KI+/tIPp7vNK4doyT4Ng15JGgr0hLQgQ5SdKLXmNt8E=
+github.com/hashicorp/vault v1.15.2/go.mod h1:A3I8/CzWOfzORILaufmIefVPxg8M1n2WM9GqGs4ox5I=
 github.com/hashicorp/vault-plugin-auth-alicloud v0.16.0 h1:DgJ9v3sWQlvyvpmCU/YAFdmGgLi6t8PHQ+O9UeYIuCg=
 github.com/hashicorp/vault-plugin-auth-alicloud v0.16.0/go.mod h1:UQa534XDQsSwwR4MYhOGnkF2gEao9zVABySBTfjAq08=
 github.com/hashicorp/vault-plugin-auth-azure v0.16.2 h1:ikzhUkiZ6QZ/mhoKNBVTJCzeaC9mEhXCqZ/7Z1Zoajg=
@@ -878,8 +876,8 @@ github.com/hashicorp/vault-plugin-secrets-kubernetes v0.6.0 h1:DePS4sSAbjYTQrpTP
 github.com/hashicorp/vault-plugin-secrets-kubernetes v0.6.0/go.mod h1:4nPWdBQxjIEGZaWWPKHixN7MFHjESOlOtNyy02e/w9c=
 github.com/hashicorp/vault-plugin-secrets-kv v0.16.1 h1:Giy/sj9O9BYdZbNsAkYvNmns5KikZI5RsFb4bBPFXds=
 github.com/hashicorp/vault-plugin-secrets-kv v0.16.1/go.mod h1:oJwVConr6pkDIIO8q8OO3FP5WtWj/iSWuhiPVdKt67E=
-github.com/hashicorp/vault-plugin-secrets-mongodbatlas v0.10.1 h1:6WyystBBEx1bDpkZO99wI3RbNvhUTVR6/ihHDeZMsPw=
-github.com/hashicorp/vault-plugin-secrets-mongodbatlas v0.10.1/go.mod h1:OdXvez+GH0XBSRS7gxbS8B1rLUPb8bGk+bDVyEaAzI8=
+github.com/hashicorp/vault-plugin-secrets-mongodbatlas v0.10.2 h1:5eFlzhFXoSe+ntm26wromhtLbPjTCdXcdwpMv7wFeHk=
+github.com/hashicorp/vault-plugin-secrets-mongodbatlas v0.10.2/go.mod h1:OdXvez+GH0XBSRS7gxbS8B1rLUPb8bGk+bDVyEaAzI8=
 github.com/hashicorp/vault-plugin-secrets-openldap v0.11.2 h1:LNzIP4zfWivAy/hgCIwETJFr7BBS91bsJ6AlsGhqAc8=
 github.com/hashicorp/vault-plugin-secrets-openldap v0.11.2/go.mod h1:osvWc6/BOZPR8Mdqp5dF40dAaHddEiylO1pDRI7DOqo=
 github.com/hashicorp/vault-plugin-secrets-terraform v0.7.3 h1:k5jCx6laFvQHvrQod+TSHSoDqF3ZSIlQB4Yzj6koz0I=

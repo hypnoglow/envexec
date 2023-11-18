@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32
 	github.com/hashicorp/go-hclog v1.5.0
-	github.com/hashicorp/vault v1.15.1
+	github.com/hashicorp/vault v1.15.2
 	github.com/hashicorp/vault/api v1.10.0
 	github.com/integrii/flaggy v1.5.2
 	github.com/stretchr/testify v1.8.4
@@ -36,7 +36,6 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.1 // indirect
 	github.com/Masterminds/sprig/v3 v3.2.3 // indirect
 	github.com/Microsoft/go-winio v0.6.1 // indirect
-	github.com/NYTimes/gziphandler v1.1.1 // indirect
 	github.com/ProtonMail/go-crypto v0.0.0-20230626094100-7e9e0395ebec // indirect
 	github.com/aliyun/alibaba-cloud-sdk-go v1.62.521 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
@@ -60,7 +59,7 @@ require (
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/dnaeon/go-vcr v1.2.0 // indirect
 	github.com/docker/distribution v2.8.2+incompatible // indirect
-	github.com/docker/docker v24.0.5+incompatible // indirect
+	github.com/docker/docker v24.0.7+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect
 	github.com/duosecurity/duo_api_golang v0.0.0-20190308151101-6c680f768e74 // indirect
