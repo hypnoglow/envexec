@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32
 	github.com/hashicorp/go-hclog v1.6.2
-	github.com/hashicorp/vault v1.15.3
+	github.com/hashicorp/vault v1.15.4
 	github.com/hashicorp/vault/api v1.10.0
 	github.com/integrii/flaggy v1.5.2
 	github.com/stretchr/testify v1.8.4
