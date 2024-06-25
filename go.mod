@@ -1,6 +1,6 @@
 module github.com/hypnoglow/envexec
 
-go 1.21
+go 1.22
 
 require (
 	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32

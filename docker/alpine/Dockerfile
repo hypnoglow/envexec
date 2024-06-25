@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM golang:1.21-alpine3.18 AS build
+FROM golang:1.22-alpine3.19 AS build
 
 WORKDIR /opt/envexec/
 
@@ -21,6 +21,6 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -mod=vendor
 
-FROM alpine:3.18
+FROM alpine:3.19
 
 COPY --from=build /opt/envexec/envexec /usr/local/bin/envexec
