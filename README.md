@@ -29,7 +29,7 @@ The easiest way to embed **envexec** into your Docker image is to just
 copy the binary from the prebuilt image:
 
 ```docker
-FROM alpine:3.18
+FROM alpine:3.19
 
 COPY --from=hypnoglow/envexec:latest-scratch /envexec /usr/local/bin/envexec
 
