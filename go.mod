@@ -5,7 +5,7 @@ go 1.22
 require (
 	github.com/ghodss/yaml v1.0.1-0.20190212211648-25d852aebe32
 	github.com/hashicorp/go-hclog v1.6.3
-	github.com/hashicorp/vault v1.17.0
+	github.com/hashicorp/vault v1.17.1
 	github.com/hashicorp/vault/api v1.14.0
 	github.com/integrii/flaggy v1.5.2
 	github.com/stretchr/testify v1.9.0
@@ -72,6 +72,7 @@ require (
 	github.com/digitalocean/godo v1.7.5 // indirect
 	github.com/dimchansky/utfbom v1.1.1 // indirect
 	github.com/distribution/reference v0.6.0 // indirect
+	github.com/dnaeon/go-vcr v1.2.0 // indirect
 	github.com/docker/docker v25.0.5+incompatible // indirect
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.5.0 // indirect

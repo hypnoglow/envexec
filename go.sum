@@ -285,8 +285,8 @@ github.com/dimchansky/utfbom v1.1.1/go.mod h1:SxdoEBH5qIqFocHMyGOXVAybYJdr71b1Q/
 github.com/distribution/reference v0.6.0 h1:0IXCQ5g4/QMHHkarYzh5l+u8T3t73zM5QvfrDyIgxBk=
 github.com/distribution/reference v0.6.0/go.mod h1:BbU0aIcezP1/5jX/8MP0YiH4SdvB5Y4f/wlDRiLyi3E=
 github.com/dnaeon/go-vcr v1.0.1/go.mod h1:aBB1+wY4s93YsC3HHjMBMrwTj2R9FHDzUr9KyGc8n1E=
-github.com/dnaeon/go-vcr v1.1.0 h1:ReYa/UBrRyQdant9B4fNHGoCNKw6qh6P0fsdGmZpR7c=
-github.com/dnaeon/go-vcr v1.1.0/go.mod h1:M7tiix8f0r6mKKJ3Yq/kqU1OYf3MnfmBWVbPx/yU9ko=
+github.com/dnaeon/go-vcr v1.2.0 h1:zHCHvJYTMh1N7xnV7zf1m1GPBF9Ad0Jk/whtQ1663qI=
+github.com/dnaeon/go-vcr v1.2.0/go.mod h1:R4UdLID7HZT3taECzJs4YgbbH6PIGXB6W/sc5OLb6RQ=
 github.com/docker/cli v25.0.5+incompatible h1:3Llw3kcE1gOScEojA247iDD+p1l9hHeC7H3vf3Zd5fk=
 github.com/docker/cli v25.0.5+incompatible/go.mod h1:JLrzqnKDaYBop7H2jaqPtU4hHvMKP+vjCwu2uszcLI8=
 github.com/docker/docker v25.0.5+incompatible h1:UmQydMduGkrD5nQde1mecF/YnSbTOaPeFIeP5C4W+DE=
@@ -682,8 +682,8 @@ github.com/hashicorp/raft-wal v0.4.0 h1:oHCQLPa3gBTrfuBVHaDg2b/TVXpU0RIyeH/mU9ov
 github.com/hashicorp/raft-wal v0.4.0/go.mod h1:A6vP5o8hGOs1LHfC1Okh9xPwWDcmb6Vvuz/QyqUXlOE=
 github.com/hashicorp/serf v0.10.1 h1:Z1H2J60yRKvfDYAOZLd2MU0ND4AH/WDz7xYHDWQsIPY=
 github.com/hashicorp/serf v0.10.1/go.mod h1:yL2t6BqATOLGc5HF7qbFkTfXoPIY0WZdWHfEvMqbG+4=
-github.com/hashicorp/vault v1.17.0 h1:VWwxNuTNoaScRPeQAWa44fLbMZ986TQbTY7mEuZ0nBU=
-github.com/hashicorp/vault v1.17.0/go.mod h1:A4/VtSMy4LCaHPkKafWGLfy508GiyXSnamFseISBXuc=
+github.com/hashicorp/vault v1.17.1 h1:Feffv3dCDdoheqmrD5mcQN9mOvcwiJ32agOTIW1vuF4=
+github.com/hashicorp/vault v1.17.1/go.mod h1:6Y6oscNm/UX+zpeAGXv/NbQPD6XfqpuhA5/6hzKiOiQ=
 github.com/hashicorp/vault-plugin-auth-alicloud v0.18.0 h1:rGQ+zHJPSIFEpWJ/AEDrOCs7zWrVWIh/JDHRlccr8CI=
 github.com/hashicorp/vault-plugin-auth-alicloud v0.18.0/go.mod h1:yTlbTm6u0wLBmS905Puz68d+SAc7MjN2D4BeELPUON8=
 github.com/hashicorp/vault-plugin-auth-azure v0.18.0 h1:jQcbAWvEP2fFbmlomA6fnIGRhW5EZqat4NYNcmZUjOY=
@@ -692,8 +692,8 @@ github.com/hashicorp/vault-plugin-auth-cf v0.17.0 h1:YbrUCEHTydBxOHKXsp0rS1H5x9q
 github.com/hashicorp/vault-plugin-auth-cf v0.17.0/go.mod h1:Rs3cpijsn7oFbEdA95NTiuI0ec85fS3gwrcNCSyLwbs=
 github.com/hashicorp/vault-plugin-auth-gcp v0.18.0 h1:chiaa1NLN/B2fcoN/WY/YWVxB8F+hE5koudzLWQcG2c=
 github.com/hashicorp/vault-plugin-auth-gcp v0.18.0/go.mod h1:HtXlc4HKAmUe8/WE4hP0dirpkq4joxhvm8EZ/TvOZk0=
-github.com/hashicorp/vault-plugin-auth-jwt v0.20.3 h1:mLsdorH4m43rBqybHDZKl33rrmc80ens4hSB6E7i9o0=
-github.com/hashicorp/vault-plugin-auth-jwt v0.20.3/go.mod h1:1IQjNAZ2z8GdTPM/XizC6eA4X9brnOXiwSoYEOfuDlM=
+github.com/hashicorp/vault-plugin-auth-jwt v0.21.0 h1:le7E2LJXzdcM/8aBpRijMSG2jaz6UMU/mY1tZi0X+94=
+github.com/hashicorp/vault-plugin-auth-jwt v0.21.0/go.mod h1:1IQjNAZ2z8GdTPM/XizC6eA4X9brnOXiwSoYEOfuDlM=
 github.com/hashicorp/vault-plugin-auth-kerberos v0.12.0 h1:zJF5jyIwDSqvze2QZ+ONE9k8p8GSql6+4aWSzDrCIUM=
 github.com/hashicorp/vault-plugin-auth-kerberos v0.12.0/go.mod h1:SHMeHUVjgH5lmmCukxEQiVsib8dQnMuhGJgwv5So7oI=
 github.com/hashicorp/vault-plugin-auth-kubernetes v0.19.0 h1:zJLrTPyVp62BEDrK3+ZimyELCx0ShBBQppFnloy/fJ8=
@@ -984,6 +984,7 @@ github.com/modern-go/reflect2 v0.0.0-20180701023420-4b7aa43c6742/go.mod h1:bx2lN
 github.com/modern-go/reflect2 v1.0.1/go.mod h1:bx2lNnkwVCuqBIxFjflWJWanXIb3RllmbCylyMrvgv0=
 github.com/modern-go/reflect2 v1.0.2 h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
 github.com/modern-go/reflect2 v1.0.2/go.mod h1:yWuevngMOJpCy52FWWMvUC8ws7m/LJsjYzDa0/r8luk=
+github.com/modocache/gover v0.0.0-20171022184752-b58185e213c5/go.mod h1:caMODM3PzxT8aQXRPkAt8xlV/e7d7w8GM5g0fa5F0D8=
 github.com/mongodb-forks/digest v1.1.0 h1:7eUdsR1BtqLv0mdNm4OXs6ddWvR4X2/OsLwdKksrOoc=
 github.com/mongodb-forks/digest v1.1.0/go.mod h1:rb+EX8zotClD5Dj4NdgxnJXG9nwrlx3NWKJ8xttz1Dg=
 github.com/montanaflynn/stats v0.0.0-20171201202039-1bf9dbcd8cbe/go.mod h1:wL8QJuTMNUDYhXwkmfOly8iTdp5TEcJFWZD2D7SIkUc=
