@@ -12,6 +12,14 @@
 **envexec** helps to provision an application by taking values from
 sources like Vault and bringing them as environment variables.
 
+## Status
+
+> [!IMPORTANT]
+> The project has been discontinued.
+>
+> Recommended replacements: 
+> - [vals](https://github.com/helmfile/vals)
+
 ## Features
 
 - Out of process (no code dependency)
